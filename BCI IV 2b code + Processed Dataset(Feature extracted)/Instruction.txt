@@ -1,0 +1,3 @@
+you need to preprocess the dataset using code provided 
+then preprocessed dataset is classified using the weka tool by selecting different models (I have found SDC the best model for the datset you can try your own)
+Match the results with my file.
