@@ -8,8 +8,8 @@ ch = [10:14 19:23 28:32 37:41 46:50] ; % Channels that are need to be extracted
 %(- F5, F3, F1, Fz, F2, F4, F6, - FC5, FC3, FC1, FCz, FC2, FC4, FC6, - C5, C3, C1, Cz, C2, C4, C6, - CP5, CP3, CP1, CPz, CP2, CP4, CP6 and - P5, P3, P1, Pz, P2, P4, P6.)
 movements=['Idle','Walking','SideStep','Sit','StepUp','BackStep']; % select the Type of motion that is need to be extracted
 datasetfolder='E:\Project start2\Dataset\Lower Limb Data' ; % Dataset location Folder
-nosub=2  ;% Number folders that are needed to be extracted
-epochType=0;% Epochs Type:- 0  for feature extraction > 1 or anything else for morphology analysis
+nosub=13  ;% Number folders that are needed to be extracted
+epochType=1;% Epochs Type:- 0  for ERD > 1 or anything else for MRCP
 filterOrder=2; % Select the Filter Order
 filterType='high';% Select Filter type High / Low
 

@@ -45,3 +45,13 @@ Following Steps were applied on the dataset in matlab
 ## Python
 
 The Python code is consisting of helper code which acts like a converter between Matlab and Python for Transfering of DataSet.
+
+
+
+
+Instructions if you want to use it Place your mat files
+       in the folder named "mat" and set the basepath one folder before mat folder
+       like that location/mat will be the mat files folder
+       and location will be the basepath folder
+       It is because this package generate the seperate folder for each step
+       

@@ -1,6 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 19 12:18:47 2022
+
+@author: Muhammd Mujtaba
+
+This module is for the extacting data from the mat files it can be used for the
+extracting sigle file or mutiple file togather 
+"""
+
 import scipy
 import numpy as np
-def loadmat(filename):
+import os
+
+
+def printinfo():
+    msg="""You will give it the data form loadmat and it seperate the data into the data and 
+    target datavariable.
+    means X,y in form of temp_data_sub, temp_tar_sub
+
+    It take the all the subjects data from load file and then turn them into the seperate
+    dataframe of each subject So, that it can be given to the tsfreah for feature extraction
+    It is done by following functions
+    1- load_single_mat: It load single mat file data
+    2- load_all_mat: It load all the mat files
+    
+    filename: name of the file with it location
+    filePath: Loaction to all the files
+    
+    """
+
+    print(msg)
+    
+
+def load_single_mat(filename):
     """Improved loadmat (replacement for scipy.io.loadmat)
     """
 
@@ -61,11 +93,12 @@ def loadmat(filename):
         filename, struct_as_record=False, squeeze_me=True)
     return _check_keys(data)
 
-"""Editing Code goes here"""
-data = dict()
-filePath='E:\\Project start2\\Dataset\\Lower Limb Data\\Uperlimb code generated'
-for i in range(1,14):
-    filename=filePath+'\\Subject'+str(i)+'.mat'
-    subject='Subject'+str(i)
-    temp=loadmat(filename);
-    data[subject]=temp[subject]
+def load_all_mat(basefolder,subno):
+    basefolder=os.path.join(basefolder, "mat/")
+    data = dict()
+    for i in range(1,subno+1):
+        filename=basefolder+'\\Subject'+str(i)+'.mat'
+        subject='Subject'+str(i)
+        temp=load_single_mat(filename);
+        data[subject]=temp[subject]
+    return data
